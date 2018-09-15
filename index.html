@@ -11,23 +11,19 @@
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
-      function handleLogin()
-  {
-      console.log('here');
+    const {
+    Stitch,
+    RemoteMongoClient,
+    GoogleRedirectCredential,
+    } = stitch;
 
-      const {
-  Stitch,
-  RemoteMongoClient,
-  GoogleRedirectCredential,
-} = stitch;
-client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
-console.log(client);
-const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
-//console.log(db); 
+    client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+    const credential = new stitch.GoogleRedirectCredential();
+    const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
 
-const credential = new stitch.GoogleRedirectCredential();
-console.log('-->' + JSON.stringify(credential));
-//stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
+    function handleLogin()
+    {
+  //stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
 client.auth.loginWithRedirect(credential).then(user => 
     db.collection('ledger').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
   ).then(() => 
@@ -39,6 +35,11 @@ client.auth.loginWithRedirect(credential).then(user =>
     console.error(err)
   });
 
+ if (this.client.auth.hasRedirectResult()) {
+      this.client.auth.handleRedirectResult().then(user => {
+        console.log('Yea WE ARE HERE');
+      })
+    }
 
 
    /* client.authenticate("google").then((id) =>
