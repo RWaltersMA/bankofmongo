@@ -11,6 +11,8 @@
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
+      function handleLogin()
+  {
       const {
   Stitch,
   RemoteMongoClient,
@@ -31,8 +33,7 @@ stitch.Stitch.auth.loginWithRedirect(credential).then(user =>
   });
 
 
-function handleLogin()
-  {
+
     client.authenticate("google").then((id) =>
       displayEmployees()).catch(err => {
       console.error(err)
