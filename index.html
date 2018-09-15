@@ -28,6 +28,7 @@
     function handleLogin()
     {
     client.auth.loginWithRedirect(credential);
+    return;
     /*.then(user => 
     db.collection('ledger').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
   ).then(() => 
@@ -37,13 +38,13 @@
       console.log("[MongoDB Stitch] Connected to Stitch")
   }).catch(err => {
     console.error(err)
-  });*/
+  });
 
  if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
         console.log('Yea WE ARE HERE');
       })
-    }
+    }*/
 
   }
   </script>
