@@ -20,7 +20,11 @@
     client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
     const credential = new stitch.GoogleRedirectCredential();
     const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
-
+    if (this.client.auth.hasRedirectResult()) {
+      this.client.auth.handleRedirectResult().then(user => {
+        console.log('YES YOU ARE AUTHED!');
+      })
+    }
     function handleLogin()
     {
   //stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
