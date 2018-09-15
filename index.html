@@ -17,12 +17,12 @@
 
       const {
   Stitch,
-  RemoteMongoDatabase,
+  RemoteMongoClient,
   GoogleAuthClient,
 } = stitch;
 const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
 console.log(client);
-const db = client.getServiceClient(stitch.RemoteMongoDatabase.factory, 'mongodb-atlas').db('MongoBank');
+const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
 //console.log(db);
 const credential = new stitch.GoogleRedirectCredential("http://bankofmongo.com");
 console.log('-->' + JSON.stringify(credential));
