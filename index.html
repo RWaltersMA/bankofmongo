@@ -23,7 +23,8 @@
 const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
 console.log(client);
 const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
-//console.log(db);
+//console.log(db); 
+
 const credential = new stitch.GoogleRedirectCredential("http://bankofmongo.com");
 console.log('-->' + JSON.stringify(credential));
 //stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
