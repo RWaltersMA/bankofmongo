@@ -25,7 +25,7 @@ console.log(client);
 //const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
 //console.log(db);
 const credential = new stitch.GoogleRedirectCredential("http://bankofmongo.com");
-console.log(credential);
+console.log('-->' + credential);
 //stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
 stitch.Stitch.client.loginWithRedirect(credential).then(user => 
     db.collection('ledger').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
