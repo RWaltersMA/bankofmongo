@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <!-- Stitch JavaScript SDK -->
-  <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
+  <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.13/stitch.js"></script>
 
   <!-- Bootstrap 4 css -->s
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -17,12 +17,12 @@
 
       const {
   Stitch,
-  RemoteMongoClient,
+  RemoteMongoDatabase,
   GoogleAuthClient,
 } = stitch;
 const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
 console.log(client);
-const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
+const db = client.getServiceClient(stitch.RemoteMongoDatabase.factory, 'mongodb-atlas').db('MongoBank');
 //console.log(db);
 const credential = new stitch.GoogleRedirectCredential("http://bankofmongo.com");
 console.log('-->' + JSON.stringify(credential));
