@@ -20,7 +20,7 @@
   RemoteMongoClient,
   GoogleAuthClient,
 } = stitch;
-const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
 console.log(client);
 const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
 //console.log(db); 
@@ -28,7 +28,7 @@ const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-at
 const credential = new stitch.GoogleRedirectCredential("http://bankofmongo.com");
 console.log('-->' + JSON.stringify(credential));
 //stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential);
-stitch.Stitch.defaultAppClient.auth.loginWithRedirect(credential).then(user => 
+client.auth.loginWithRedirect(credential).then(user => 
     db.collection('ledger').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
   ).then(() => 
     db.collection('ledger').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
