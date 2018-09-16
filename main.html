@@ -51,7 +51,7 @@
       }
       function SaveWithdraw()
       {
-          client.callFunction("UpdateLedger",[$('#txtWithdrawAmount').val(), "withdrawl", $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ console.log(JSON.stringify(result));} );
+          client.callFunction("UpdateLedger",[$('#txtWithdrawAmount').val(), "withdrawl", $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ $('#WithdrawModal').modal('hide');} );
       }
       function SaveDeposit()
       {
