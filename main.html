@@ -30,8 +30,8 @@
           .then(ledger => {
             for (var x in ledger) {
             // console.log(JSON.stringify(ledger));
-                console.log(JSON.stringify(ledger[x]));
-                //document.getElementById("ledger").innerHTML += x.description;
+            //    console.log(JSON.stringify(ledger[x].description));
+                document.getElementById("ledger").innerHTML += ledger[x].description;
                 }
        //       document.getElementById("ledger").innerHTML = '<b>${ledger.description}</b>'
             
