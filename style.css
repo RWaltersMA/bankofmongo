@@ -1,0 +1,24 @@
+
+h1 { font-family: Helvetica; font-weight: bold; }
+
+.centered { text-align: center; }
+.hidden { display: none !important; }
+.fixed-width { width: 50%; }
+.page-title { margin-bottom: 50px; }
+.table { margin-top: 60px; }
+
+#auth-type-identifier { margin-bottom: 30px; }
+#login-form { width: 500px; }
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #cccccc;
+    color: black;
+}

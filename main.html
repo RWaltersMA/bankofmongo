@@ -26,7 +26,53 @@
 </script>
 </head>
 <body>
-Test
+    <nav class="navbar navbar-light" style="background-color: #DCDCDC;"> 
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#">
+                <img alt="Bank of Mongo" src="title.png">
+                </a>
+            </div>
+            <div class="navbar-header navbar-right">
+                <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;Alerts</button>    
+                <a href="/logout" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-off"></span>&nbsp;Log out</a>
+            </div>
+                
+        </div>
+        </nav>
+
+
+<div class="container">
+        <h3>Ledger</h3>
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <div class="row" style="background:#dddddd">
+                <div class="col-sm-2">Date</div>
+                <div class="col-sm-4">Description</div>
+                <div class="col-sm-2">Deposit</div>
+                <div class="col-sm-2">Withdrawl</div>
+                <div class="col-sm-2">Balance</div>
+              </div>
+<div id="ledger"></div>
+            </div>
+        </div>
+</div>
+
+<div class="footer" style="padding:3px">
+<div class="row">
+<div class="col-sm-2">
+<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Deposit</button>
+</div>
+
+<div class="col-sm-2">
+<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-minus"></span>&nbsp;Withdrawl</button>
+</div>
+<div class="col-sm-6">&nbsp;</div>
+<div class="col-sm-2">
+<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span>&nbsp;Reset Demo</button>
+</div>
+
+</div>
 
 </body>
 </html>
