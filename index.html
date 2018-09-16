@@ -18,11 +18,11 @@
     console.log('********');
 
     client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
-    const credential = new stitch.GoogleRedirectCredential("https://bankofmongo.com/main.html");
+    const credential = new stitch.GoogleRedirectCredential();
     if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
         console.log(user);
-        window.location("main.html");
+      //  window.location("main.html");
       })
     }
     function handleLogin()
