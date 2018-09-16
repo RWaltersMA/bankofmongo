@@ -48,11 +48,11 @@
       function SaveWithdrawl()
       {
           //Stitch.defaultAppClient.callFunction(
-          client.callFunction("UpdateLedger",[$('$txtWithdrawlDescription').val(), "withdrawl", $('$txtWithdrawlAmount').val(), new Date()]).then(result=>{ console.log(JSON.stringify(result));} );
+          client.callFunction("UpdateLedger",[$('#txtWithdrawlDescription').val(), "withdrawl", $('#txtWithdrawlAmount').val(), new Date()]).then(result=>{ console.log(JSON.stringify(result));} );
       }
       function SaveDeposit()
       {
-        client.callFunction("UpdateLedger", ["Deposit Funds", "deposit", $('$txtDespositAmount').val(), new Date() ]).then(result=>{ $('#DepositModal').hide(); });
+        client.callFunction("UpdateLedger", ["Deposit Funds", "deposit", $('#txtDespositAmount').val(), new Date() ]).then(result=>{ $('#DepositModal').hide(); });
       }
     </script>
     <nav class="navbar navbar-light" style="background-color: #DCDCDC;"> 
