@@ -29,6 +29,7 @@
          // .then(docs => docs.map(doc => `<div>${doc.comment}</div>`))
           .then(ledger => {
             for (var x in ledger) {
+                console.log(JSON.parse(x));
                 document.getElementById("ledger").innerHTML += x['descrption'];
                 }
        //       document.getElementById("ledger").innerHTML = '<b>${ledger.description}</b>'
