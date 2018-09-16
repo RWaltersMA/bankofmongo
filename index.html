@@ -22,6 +22,7 @@
     if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
         console.log(user);
+        window.location("main.html");
       })
     }
     function handleLogin()
