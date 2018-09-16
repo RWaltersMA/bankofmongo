@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Bank of Mongo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.13/stitch.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+      client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+      const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
+      if (this.client.auth.hasRedirectResult()) {
+      this.client.auth.handleRedirectResult().then(user => {
+        console.log('Display ledger!');
+      })
+        } else { console.log('not authenticated'); }
+    
+      function displayComments() {
+        db.collection("comments")
+          .find({}, { limit: 1000 })
+          .asArray()
+          .then(docs => docs.map(doc => `<div>${doc.comment}</div>`))
+          .then(comments => document.getElementById("comments").innerHTML = comments)
+      }
+</script>
+</head>
+<body>
+Test
+
+</body>
+</html>
