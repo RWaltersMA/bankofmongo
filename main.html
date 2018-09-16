@@ -46,7 +46,7 @@
           console.log(client);
         alert('newdate1');
           //Stitch.defaultAppClient.callFunction(
-          client.callFunction("SaveWithdrawl",["testing"]).then(result=>{ console.log('OK!');} );
+          client.callFunction("SaveWithdrawl",["testing"]).then(result=>{ console.log(JSON.stringify(result));} );
         alert('Done');
       }
     </script>
