@@ -4,40 +4,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <!-- Stitch JavaScript SDK -->
-  <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.13/stitch.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.13/stitch.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+    <script>
 
-    const {
-    Stitch,
-    RemoteMongoClient,
-    GoogleRedirectCredential,
-    } = stitch;
-    console.log('********');
+        const {
+        Stitch,
+        RemoteMongoClient,
+        GoogleRedirectCredential,
+        } = stitch;
 
-    client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
-    const credential = new stitch.GoogleRedirectCredential("https://bankofmongo.com/main.html");
+        client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+        const credential = new stitch.GoogleRedirectCredential("https://bankofmongo.com/main.html");
     
-    /*if (this.client.auth.hasRedirectResult()) {
-      this.client.auth.handleRedirectResult().then(user => {
-        console.log(user);
-      //  window.location("main.html");
-      })
-    }*/
-    function handleLogin()
-    {
-        var butLogin=document.getElementById("login-button");
-        butLogin.innerText="Redirecting...";
-        butLogin.disabled=true;
-    client.auth.loginWithRedirect(credential);
-    return;
-    
-
-  }
-  </script>
+        function handleLogin()
+        {
+            var butLogin=document.getElementById("login-button");
+            butLogin.innerText="Redirecting...";
+            butLogin.disabled=true;
+            client.auth.loginWithRedirect(credential);
+            return;
+        }
+    </script>
 </head>
 
 <body>
@@ -47,7 +38,7 @@
             <div class="jumbotron text-center">
                 <button type="submit" id="login-button" class="btn btn-danger" onclick="handleLogin()"> <span class="fa fa-google-plus"></span> Log In</button>
             </div>
-            <div class="panel-footer" style="background:rgb(214, 202, 30);"><b>** MongoDB Stitch Demo Website.  This is not a real bank. **</b></div>
+            <div class="panel-footer" style="background:rgb(214, 202, 30); border: 1px solid black;padding: 20px 20px 20px 20px;"><b>** MongoDB Stitch Demo Website.  This is not a real bank. **</b></div>
         </div>
   </div>
     
