@@ -7,6 +7,7 @@
   <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.13/stitch.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script>
 
@@ -19,12 +20,13 @@
 
     client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
     const credential = new stitch.GoogleRedirectCredential("https://bankofmongo.com/main.html");
-    if (this.client.auth.hasRedirectResult()) {
+    
+    /*if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
         console.log(user);
       //  window.location("main.html");
       })
-    }
+    }*/
     function handleLogin()
     {
     client.auth.loginWithRedirect(credential);
@@ -38,15 +40,11 @@
 <body>
   <h1 align="center" class="page-title">Bank of Mongo</h1>
   <h3 align="center" id="auth-type-identifier">Log in</h3>
-  <div class="login-container">
-
-    <div id="login-form"></div>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <span class="fa fa-google-plus"></span>    
       <button type="submit" id="login-button" class="btn btn-primary" onclick="handleLogin()">Log In</button>
     </div>
-
-  </div>
-
-
   </div>
     
 </body>
