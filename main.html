@@ -44,12 +44,13 @@
      function Deposit()
       {
           console.log(client);
-           alert('dsfasdfasd');
+           alert('newdate');
           //Stitch.defaultAppClient.callFunction(
           client.callFunction("Deposit",{
             "description" : "testing",
             "action" : "deposit",
-            "value" : 100
+            "value" : 100,
+            "ts" : new Date()
         });
         alert('Done');
       }
