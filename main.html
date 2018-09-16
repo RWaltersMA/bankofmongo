@@ -45,10 +45,11 @@
       {
           alert('dsfasdfasd');
           //Stitch.defaultAppClient.callFunction(
-          client.callFunction("deposit",{
-            "owner_id" : client.auth.user.id,
+          client.callFunction("Deposit",{
+            
             "description" : "testing",
-            "deposit" : 100
+            "action" : "deposit",
+            "value" : 100
         });
         alert('Done');
       }
