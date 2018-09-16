@@ -29,6 +29,9 @@
     }*/
     function handleLogin()
     {
+        var butLogin=document.getElementById("login-button");
+        butLogin.value="Redirecting...";
+        butLogin.disabled=true;
     client.auth.loginWithRedirect(credential);
     return;
     
