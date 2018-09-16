@@ -27,7 +27,7 @@
           .find({}, { limit: 1000 })
           .asArray()
          // .then(docs => docs.map(doc => `<div>${doc.comment}</div>`))
-          .then(ledger => document.getElementById("ledger").innerHTML = '<b>test</b>')
+          .then(ledger => document.getElementById("ledger").innerHTML = '<b>${ledger.description}</b>')
       }
 </script>
 </head>
