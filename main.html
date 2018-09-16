@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <script>
-      const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+    client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
       const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
       if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
