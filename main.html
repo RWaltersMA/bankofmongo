@@ -36,6 +36,15 @@
             
             })
       }
+      function Deposit()
+      {
+        db.collection("ledger").insert({
+            "owner_id" : client.auth.user.id,
+            "description" : "testing",
+            "deposit" : 100
+        });
+        alert('Done');
+      }
 </script>
 </head>
 <body>
@@ -70,7 +79,7 @@
 <div class="footer" style="padding:3px">
 <div class="row">
 <div class="col-sm-2">
-<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Deposit</button>
+<button type="button" class="btn btn-default" onclick="Deposit()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Deposit</button>
 </div>
 
 <div class="col-sm-2">
