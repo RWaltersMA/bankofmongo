@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 <script>
-      client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
+      const client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
       const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
       if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
@@ -46,7 +46,6 @@
           alert('dsfasdfasd');
           //Stitch.defaultAppClient.callFunction(
           client.callFunction("Deposit",{
-            
             "description" : "testing",
             "action" : "deposit",
             "value" : 100
