@@ -47,12 +47,12 @@
         alert('newdate');
           //Stitch.defaultAppClient.callFunction(
           client.callFunction("Desposit",[
-          {
+          JSON.stringify({
             "description" : "testing",
             "action" : "deposit",
             "value" : 100,
             "ts" : new Date()
-        }]
+        })]
         
         ).then(result=>{ console.log('OK!');} );
         alert('Done');
