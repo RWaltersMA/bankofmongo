@@ -52,7 +52,7 @@
       }
       function SaveDeposit()
       {
-        client.callFunction("UpdateLedger", ["Deposit Funds", "deposit", $('#txtDespositAmount').val(), new Date() ]).then(result=>{ $('#DepositModal').hide(); });
+        client.callFunction("UpdateLedger", ["Deposit Funds", "deposit", $('#txtDespositAmount').val(), new Date() ]).then(result=>{ $('#DepositModal').modal('hide'); });
       }
     </script>
     <nav class="navbar navbar-light" style="background-color: #DCDCDC;"> 
