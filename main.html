@@ -48,12 +48,12 @@
       function Withdraw()
       {
         $('#txtWithdrawDescription').val('');
-        $('#txtWithdrawlAmount').val('');
+        $('#txtWithdrawAmount').val('');
         $('#WithdrawModal').modal();
       }
       function SaveWithdraw()
       {
-          client.callFunction("UpdateLedger",['-' + $('#txtWithdrawDescription').val(), "withdraw", $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ $('#WithdrawModal').modal('hide'); displayLedger(); } );
+          client.callFunction("UpdateLedger",[$('#txtWithdrawDescription').val(), "withdraw", '-' + $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ $('#WithdrawModal').modal('hide'); displayLedger(); } );
       }
       function SaveDeposit()
       {
