@@ -32,7 +32,7 @@
                 document.getElementById("ledger").innerHTML += ledger[x].description;
                 }            
             })
-        client.callFunction("GetTotal").then(result=>{ $('#lblTotal').val(result.total); console.log('result==' + JSON.stringify(result)); } );
+        client.callFunction("GetTotal").then(result=>{ $('#lblTotal').text(result.total); console.log('result==' + JSON.stringify(result)); } );
   
       }
      
