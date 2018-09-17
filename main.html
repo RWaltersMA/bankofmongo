@@ -20,8 +20,7 @@
       })
         } else { location.replace('index.html'); }
     //Populate Alert dialog if alert
-    client.callFunction("GetAlert").then(result=>{ console.log(result); $('#txtAlertAmount').text(result.amount); $('#txtAlertPhone').text(result.smsphone); } );
-  
+
       function displayLedger() {
         $('#ledger').empty();  
         db.collection("ledger")
@@ -43,6 +42,8 @@
 </head>
 <body>
     <script>
+            client.callFunction("GetAlert").then(result=>{ console.log(result); $('#txtAlertAmount').text(result.amount); $('#txtAlertPhone').text(result.smsphone); } );
+  
      function Deposit()
       {
           $('#DepositModal').modal();
