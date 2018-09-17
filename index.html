@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   
     <script>
-
+        //On load of web page, instantiate the Stitch Client
         const {
         Stitch,
         GoogleRedirectCredential,
@@ -18,7 +18,8 @@
 
         client = stitch.Stitch.initializeDefaultAppClient("mongobank-tpdvx");
         const credential = new stitch.GoogleRedirectCredential("https://bankofmongo.com/main.html");
-    
+        
+        //When user clicks the Login button, redirect to Google Login
         function handleLogin()
         {
             var butLogin=document.getElementById("login-button");
