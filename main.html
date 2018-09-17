@@ -18,7 +18,7 @@
       this.client.auth.handleRedirectResult().then(user => {
         displayLedger();
       })
-        } else { window.location('/'); }
+        } else { location.replace('index.html'); }
     
       function displayLedger() {
         $('#ledger').empty();  
@@ -33,7 +33,7 @@
                 $('#ledger').append(row);
                 }            
             })
-        client.callFunction("GetTotal").then(result=>{ $('#lblTotal').text(result.total); console.log('result==' + JSON.stringify(result)); } );
+        client.callFunction("GetTotal").then(result=>{ $('#lblTotal').text(result.total); } );
   
       }
      
