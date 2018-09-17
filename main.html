@@ -62,7 +62,7 @@
       }
       function ResetDemo()
       {
-        client.callFunction("ResetDemo").then( { displayLedger(); });
+        client.callFunction("ResetDemo").then( result=> { displayLedger(); });
       }
     </script>
     <nav class="navbar navbar-light" style="background-color: #DCDCDC;"> 
