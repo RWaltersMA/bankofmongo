@@ -60,6 +60,10 @@
         client.callFunction("UpdateLedger", ["Deposit Funds", "deposit", $('#txtDepositAmount').val(), new Date() ]).then(result=>{ $('#DepositModal').modal('hide'); displayLedger(); });
 
       }
+      function ResetDemo()
+      {
+        client.callFunction("ResetDemo").then( { displayLedger(); });
+      }
     </script>
     <nav class="navbar navbar-light" style="background-color: #DCDCDC;"> 
         <div class="container-fluid">
@@ -157,7 +161,7 @@
 </div>
 <div class="col-sm-6">&nbsp;</div>
 <div class="col-sm-2">
-<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span>&nbsp;Reset Demo</button>
+<button type="button" class="btn btn-default" onclick="ResetDemo()"><span class="glyphicon glyphicon-repeat"></span>&nbsp;Reset Demo</button>
 </div>
 
 
