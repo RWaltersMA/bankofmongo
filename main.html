@@ -27,7 +27,7 @@
           .asArray()
           .then(ledger => {
             for (var x in ledger) {
-                var row=format('<div class="row" style="border: 1px solid;"><div class="col-sm-2">{0}</div><div class="col-sm-4">{1}</div><div class="col-sm-2">{2}</div><div class="col-sm-2">{3}</div></div>',ledger[x].ts,ledger[x].description,ledger[x].type,ledger[x].value);
+                var row='<div class="row" style="border: 1px solid;"><div class="col-sm-2">' + ledger[x].ts + '</div><div class="col-sm-4">' + ledger[x].description + '</div><div class="col-sm-2">' + ledger[x].type + '</div><div class="col-sm-2">' + ledger[x].value + '</div></div>';
                 $('#ledger').append(row);
               //  document.getElementById("ledger").innerHTML += row;
                 }            
