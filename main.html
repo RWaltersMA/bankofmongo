@@ -42,15 +42,15 @@
 </head>
 <body>
     <script>
-            client.callFunction("GetAlert").then(result=>{ console.log(result); $('#txtAlertAmount').text(result.amount); $('#txtAlertPhone').text(result.smsphone); } );
-  
+
      function Deposit()
       {
           $('#DepositModal').modal();
       }
       function ShowAlert()
       {
-        $('#AlertModal').modal();
+        client.callFunction("GetAlert").then(result=>{ console.log(result); $('#txtAlertAmount').text(result.amount); $('#txtAlertPhone').text(result.smsphone); $('#AlertModal').modal(); } );
+  
       }
       function SaveAlert()
       {
