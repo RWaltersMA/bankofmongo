@@ -50,7 +50,7 @@
       function ShowAlert()
       {
         client.callFunction("GetAlert").then(result=>{ console.log(result);
-         $('#txtAlertAmount').text('101001'); $('#txtAlertPhone').text(result.smsphone); $('#AlertModal').modal(); } );
+         $('#txtAlertAmount').val('101001'); $('#txtAlertPhone').val(result.smsphone); $('#AlertModal').modal(); } );
   
       }
       function SaveAlert()
