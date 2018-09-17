@@ -16,7 +16,6 @@
       const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('MongoBank');
       if (this.client.auth.hasRedirectResult()) {
       this.client.auth.handleRedirectResult().then(user => {
-        console.log('Display ledger!');
         displayComments();
       })
         } else { console.log('not authenticated'); }
@@ -26,10 +25,11 @@
         db.collection("ledger")
           .find({}, { limit: 1000 })
           .asArray()
-         // .then(docs => docs.map(doc => `<div>${doc.comment}</div>`))
           .then(ledger => {
             for (var x in ledger) {
-                document.getElementById("ledger").innerHTML += ledger[x].description;
+                var row=$.validator.format('<div class="row" style="border: 1px solid;"><div class="col-sm-2">{0}</div><div class="col-sm-4">{1}</div><div class="col-sm-2">{2}</div><div class="col-sm-2">{3}</div></div>',ledger[x].ts,ledger[x].description,ledger[x].type,ledger[x].value);
+                $('#ledger').append(row);
+              //  document.getElementById("ledger").innerHTML += row;
                 }            
             })
         client.callFunction("GetTotal").then(result=>{ $('#lblTotal').text(result.total); console.log('result==' + JSON.stringify(result)); } );
@@ -92,7 +92,6 @@
         </div>
 </div>
 <!-- Withdrawl modal-->
-<!-- Deposit modal-->
 <div class="modal fade" id="WithdrawModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
