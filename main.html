@@ -29,7 +29,7 @@
             for (var x in ledger) {
                 var d=new Date(ledger[x].ts);
                 var datestring = d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
-                var row='<div class="row" style="border: 1px solid;"><div class="col-sm-2">' + datestring + '</div><div class="col-sm-4">' + ledger[x].description + '</div><div class="col-sm-2">' + ledger[x].type + '</div><div class="col-sm-2">' + ledger[x].value + '</div><div class="col-sm-2" style="background:#dddddd>&nbsp;</div></div>';
+                var row='<div class="row" style="border: 1px solid;"><div class="col-sm-2">' + datestring + '</div><div class="col-sm-4">' + ledger[x].description + '</div><div class="col-sm-2">' + ledger[x].type + '</div><div class="col-sm-2">' + ledger[x].value + '</div><div class="col-sm-2" style="background:#dddddd;">&nbsp;</div></div>';
                 $('#ledger').append(row);
                 }            
             })
@@ -53,7 +53,7 @@
       }
       function SaveWithdraw()
       {
-          client.callFunction("UpdateLedger",[$('#txtWithdrawAmount').val(), "withdrawl", $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ $('#WithdrawModal').modal('hide'); displayLedger(); } );
+          client.callFunction("UpdateLedger",[$('#txtWithdrawDescription').val(), "withdraw", $('#txtWithdrawAmount').val(), new Date()]).then(result=>{ $('#WithdrawModal').modal('hide'); displayLedger(); } );
       }
       function SaveDeposit()
       {
