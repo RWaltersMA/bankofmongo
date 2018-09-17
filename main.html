@@ -30,10 +30,10 @@
           .then(ledger => {
             for (var x in ledger) {
                 document.getElementById("ledger").innerHTML += ledger[x].description;
-                }
-                console.log('total=' + total);
-            //MAKE FUNCTION TO GET TOTAL!!!
+                }            
             })
+        client.callFunction("GetTotal").then(result=>{ console.log('result==' + result); } );
+  
       }
      
 </script>
