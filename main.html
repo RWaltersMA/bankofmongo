@@ -23,21 +23,16 @@
     
       function displayComments() {
           
-          var total=0;
         db.collection("ledger")
           .find({}, { limit: 1000 })
           .asArray()
          // .then(docs => docs.map(doc => `<div>${doc.comment}</div>`))
           .then(ledger => {
             for (var x in ledger) {
-                total+=parseFloat(ledger[x].value).toFixed(2);
-            // console.log(JSON.stringify(ledger));
-            //    console.log(JSON.stringify(ledger[x].description));
                 document.getElementById("ledger").innerHTML += ledger[x].description;
                 }
                 console.log('total=' + total);
-       //       document.getElementById("ledger").innerHTML = '<b>${ledger.description}</b>'
-            
+            //MAKE FUNCTION TO GET TOTAL!!!
             })
       }
      
